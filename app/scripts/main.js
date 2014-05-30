@@ -64,7 +64,7 @@ $(function(){
 		var colours = ['lime','cyan','lime','cyan','yellow','pink','blue','red','purple','green','orange','brown','teal'];
 		var suchWow = function(duration){
 			var ml = randomVal(50,0) * plusOrMinus(),
-				mt = randomVal(50,0) * plusOrMinus(),
+				mt = randomVal(50,0) * plusOrMinus() + 2,
 				id = 'wow'+Math.ceil(Math.random()*999999);
 		    var wow = wowTemplate({
 				'text': _.sample(text),
@@ -84,7 +84,7 @@ $(function(){
 		};
 		
 		function loop(){
-			var duration = 500,
+			var duration = 1000,
 				interval = randomVal(200,0);
 			setTimeout(function(){
 				suchWow(duration);
