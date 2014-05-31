@@ -208,7 +208,7 @@ module.exports = function (grunt) {
                     src: [
                         '<%= config.dist %>/scripts/{,*/}*.js',
                         '<%= config.dist %>/styles/{,*/}*.css',
-                        '<%= config.dist %>/images/{,*/}*.*',
+                        // '<%= config.dist %>/images/{,*/}*.*',
                         '<%= config.dist %>/styles/fonts/{,*/}*.*',
                         '<%= config.dist %>/*.{ico,png}'
                     ]
@@ -363,6 +363,25 @@ module.exports = function (grunt) {
                 'imagemin',
                 'svgmin'
             ]
+        },
+
+        /* jshint camelcase:false */
+        ftp_push: {
+            your_target: {
+                options: {
+                    authKey: 'rw',
+                    host: 'ftp.richardwestenra.com',
+                    // port: 21,
+                    dest: 'doge/'
+                },
+                files: [ // Enable Dynamic Expansion, Src matches are relative to this path, Actual Pattern(s) to match
+                    {
+                        expand: true,
+                        // cwd: 'test',
+                        src: ['<%= config.dist %>','<%= config.dist %>/**/*']
+                    }
+                ]
+            }
         }
     });
 
@@ -414,6 +433,11 @@ module.exports = function (grunt) {
         'rev',
         'usemin',
         'htmlmin'
+    ]);
+    
+    grunt.registerTask('deploy', [
+        'default',
+        'ftp_push'
     ]);
 
     grunt.registerTask('default', [

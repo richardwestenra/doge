@@ -2,8 +2,6 @@
 <html class="no-js">
     <head>
         <meta charset="utf-8">
-        <title>doge</title>
-        <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
         <link rel="shortcut icon" href="/favicon.ico">
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -17,6 +15,45 @@
         <!-- build:js scripts/vendor/modernizr.js -->
         <script src="../bower_components/modernizr/modernizr.js"></script>
         <!-- endbuild -->
+        <!--[if lt IE 9]>
+            <!-- build:js scripts/vendor/respond.js -->
+                <script src="../bower_components/respond/src/respond.js"></script>
+            <!-- endbuild -->
+        <![endif]-->
+
+        <title>doge</title>
+        <meta name="description" content="such doge generator, wow">
+
+        <!-- Twitter -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:site" content="richardwestenra">
+        <meta name="twitter:title" content="doge">
+        <meta name="twitter:description" content="such doge generator, wow">
+        <meta name="twitter:image:src" content="http://richardwestenra.com/doge/images/doge.jpg">
+        <script type="text/javascript">
+            var addthis_share = addthis_share || {};
+            addthis_share = {
+                passthrough : {
+                    twitter: {
+                        via: "richardwestenra",
+                        text: "such doge generator, wow"
+                    }
+                }
+            };
+        </script>
+
+        <!-- G+ -->
+        <meta itemprop="name" content="doge">
+        <meta itemprop="description" content="such doge generator, wow">
+        <meta itemprop="image" content="http://richardwestenra.com/doge/images/doge.jpg">
+
+        <!-- Facebook Markup -->
+        <meta property="og:title" content="doge"/>
+        <meta property="og:type" content="website"/>
+        <meta property="og:image" content="http://richardwestenra.com/doge/images/doge.jpg"/>
+        <meta property="og:url" content="http://richardwestenra.com/doge/"/>
+        <meta property="og:description" content="such doge generator, wow"/>
+
 
     </head>
     <body>
@@ -59,5 +96,19 @@
         <!-- build:js({app,.tmp}) scripts/main.js -->
         <script src="scripts/main.js"></script>
         <!-- endbuild -->
+
+        <!-- Go to http://www.addthis.com/get/smart-layers to customize -->
+        <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js"></script>
+        <script type="text/javascript">
+            addthis.layers({
+                'theme' : 'transparent',
+                'share' : {
+                    'position' : 'left',
+                    'services' : 'facebook,twitter,google_plusone_share,linkedin,more'
+                },
+                'whatsnext' : {},
+                'recommended' : {}
+            });
+        </script>
 </body>
 </html>
