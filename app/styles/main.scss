@@ -41,6 +41,7 @@ body {
         width: 200px;
         text-align: center;
         top: 50%;
+        text-indent: -200px;
         @media screen and (min-width: 500px) and (min-height: 500px) {
             font-size: 1.5em
         }
