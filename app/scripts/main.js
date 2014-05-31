@@ -129,7 +129,6 @@ $(function(){
 	$('#suchInput').on('keyup keypress blur focus change',function(){
 		makeUrl ( makeWords($(this)) );
 	});
-	// Jo, red hair, front-end, code, JS, dance, climb, lindy-hop, swing
 
 
 	if(!Modernizr.input.placeholder){
