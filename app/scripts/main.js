@@ -46,14 +46,15 @@ $(function(){
 			'so',
 			'such'
 		];
-		var combinedText = [];
+		if(q.length>0){
+			$('#suchInput').val( decodeURIComponent( nouns.join(', ') ) );
+		}
+		var text = [];
 		_.each(nouns,function(n){
-			combinedText = _.union(combinedText, _.map(textCompound,function(d){
+			text = text.concat(_.map(textCompound,function(d){
 				return d + ' ' + decodeURIComponent(n);
-			}));
+			})).concat(textSolo);
 		});
-		console.log(combinedText);
-		var text =  _.union(textSolo,combinedText);
 
 		var $doge = $('.doge'),
 			dogeOn = false;
@@ -103,13 +104,32 @@ $(function(){
 			// }
 		// });
 	})();
+	function makeWords(t){
+		return _.map( t.val().split(','), function(d){
+			return d.replace(/^\s+|\s+$/g,'');
+		}).join('&');
+	}
 
 	$('#suchForm').on('submit',function(e){
 		e.preventDefault();
-		var words = $(this).find('#suchInput').val().split(',').join('&');
+		var words = makeWords($(this).find('#suchInput'));
 		window.open('?'+words,'_self');
-		console.log(words);
 	});
+	$('.makeDoge').on('click',function(e){
+		e.preventDefault();
+		$(this).addClass('inactive').removeClass('active').text('make your own:');
+		$('#suchInput').addClass('active');
+	});
+
+	function makeUrl(words){
+		// console.log(window.location.origin+window.location.pathname, words);
+		var url = window.location.origin + window.location.pathname + '?' + words;
+		$('.url').addClass('active').html('url 2 share: <a href="'+url+'">'+url+'</a>');
+	}
+	$('#suchInput').on('keyup keypress blur focus change',function(){
+		makeUrl ( makeWords($(this)) );
+	});
+	// Jo, red hair, front-end, code, JS, dance, climb, lindy-hop, swing
 
 
 	if(!Modernizr.input.placeholder){

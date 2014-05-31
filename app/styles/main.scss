@@ -3,10 +3,11 @@
 @import "mixins";
 
 .browsehappy {
-    margin: 0.2em 0;
+    margin: 0.5em 0;
     background: #ccc;
     color: #000;
-    padding: 0.2em 0;
+    padding: 1em;
+    text-align: center;
 }
 
 body {
@@ -46,27 +47,43 @@ body {
 }
 form {
     position: absolute;
-    bottom: 10px;
-    left: 5%;
-    opacity: 0.5;
-    transition: all ease 0.2s;
-    width: 90%;
-    &:hover {
-        opacity: 1;
+    bottom: 60px;
+    @media screen and (min-width: 980px) {
+        bottom: 10px;
     }
+    left: 2%;
+    transition: all ease 1s;
+    width: 96%;
+    font-family: Comic Sans, Comic Sans MS, cursive;
     h2 {
         display: inline-block;
-        font-family: Comic Sans, Comic Sans MS, cursive;
-        color: cyan;
+        color: blue;
         margin: 0 20px 0 0;
         font-weight: 400;
         font-size: 1.4em;
+        line-height: 1em;
+        position: relative;
+        top: 3px;
+        a {
+            color: blue;
+            padding: 5px 10px;
+            &.active:hover {
+                text-decoration: none;
+                background-color: rgba(#ff8,0.5);
+                border-radius: 3px;
+            }
+            &.inactive {
+                color: cyan;
+                cursor: default;
+                text-decoration: none;
+            }
+        }
     }
     input {
+        line-height: 1em;
         display: inline-block;
-        margin: 10px 0 0;
-        padding: 10px 18px;
-        width: 400px;
+        margin: 10px 10px 0 0;
+        padding: 10px 0;
         font-family: Comic Sans, Comic Sans MS, cursive;
         border: none;
         background-color: #ffa;
@@ -75,11 +92,17 @@ form {
         color: #f0f;
         outline: none;
         border-radius: 0;
-        max-width: 90%;
+        width: 0;
+        box-sizing: border-box;
+        max-width: 96%;
         @include input-placeholder {
             color: rgba(#f0f,0.5);
         }
         transition: all ease 0.2s;
+        &.active {
+            width: 400px;
+            padding: 10px 18px;
+        }
         &:focus {
             background-color: #ff5;
             background-color: rgba(#ff8,0.8);
@@ -88,5 +111,21 @@ form {
     }
     .submit {
         display: none;
+    }
+    .url {
+        display: inline-block;
+        margin: 10px 10px 0 0;
+        color: teal;
+        background: rgba(#fff,0.7);
+        padding: 3px 6px 4px;
+        opacity: 0;
+        transition: all ease 0.2s;
+        font-size: 0.75em;
+        &.active {
+            opacity: 1;
+        }
+        a {
+            color: blue;
+        }
     }
 }

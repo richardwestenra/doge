@@ -60,6 +60,9 @@
         <!--[if lt IE 10]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
+        <noscript>
+            <p class="browsehappy">For full functionality of this site it is necessary to enable JavaScript. Here are <a href="http://www.enable-javascript.com/" target="_blank"> instructions how to enable JavaScript in your web browser</a>.</p>
+        </noscript>
 
         <ul class="doge">
             <script id="wowTemplate" type="text/template">
@@ -71,9 +74,10 @@
             </script>
         </ul>
         <form id="suchForm">
-            <h2>Make your own:</h2>
+            <h2><a href="#" class="makeDoge active">make your own!</a></h2>
             <input type="text" id="suchInput" placeholder="Separate words by comma.  e.g. such, doge, wow, excite" />
             <input type="submit" value="Go" class="submit">
+            <span class="url"></span>
         </form>
 
         <!-- build:js scripts/vendor.js -->
