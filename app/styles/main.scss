@@ -34,16 +34,16 @@ body {
         // @include sansSerif;
         position: absolute;
         left: 50%;
-        font-size: 1em;;
+        font-size: 1.1em;
         width: 200px;
         text-align: center;
         top: 50%;
         text-indent: -200px;
         @media screen and (min-width: 500px) and (min-height: 500px) {
-            font-size: 1.5em
+            font-size: 2em
         }
-        @media screen and (min-width: 1300px) and (min-height: 800px) {
-            font-size: 2em;
+        @media screen and (min-width: 1200px) and (min-height: 700px) {
+            font-size: 2.5em;
         }
         transition: margin ease 0.5s;
     }
@@ -62,10 +62,13 @@ form {
         color: blue;
         margin: 0;
         font-weight: 400;
-        font-size: 1.4em;
         line-height: 1em;
         position: relative;
         top: 3px;
+        font-size: 1em;
+        @media screen and (min-width: 500px) and (min-height: 500px) {
+            font-size: 1.4em;
+        }
         a {
             color: blue;
             padding: 5px 10px;
