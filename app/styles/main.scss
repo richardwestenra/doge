@@ -2,6 +2,11 @@
 // endbower
 @import "mixins";
 
+@mixin baseFont {
+    font-family: "Comic Sans", "Comic Sans MS", cursive, Lucida Console, Monaco, monospace, sans-serif;
+}
+$c_base: #ff8;
+
 .browsehappy {
     margin: 0.5em 0;
     background: #ccc;
@@ -11,6 +16,7 @@
 }
 
 body {
+    @include baseFont;
     padding: 0;
     margin: 0;
 }
@@ -35,7 +41,6 @@ body {
         width: 200px;
         text-align: center;
         top: 50%;
-        font-family: Comic Sans, Comic Sans MS, cursive;
         @media screen and (min-width: 500px) and (min-height: 500px) {
             font-size: 1.5em
         }
@@ -54,11 +59,10 @@ form {
     left: 2%;
     transition: all ease 1s;
     width: 96%;
-    font-family: Comic Sans, Comic Sans MS, cursive;
     h2 {
         display: inline-block;
         color: blue;
-        margin: 0 20px 0 0;
+        margin: 0;
         font-weight: 400;
         font-size: 1.4em;
         line-height: 1em;
@@ -67,10 +71,13 @@ form {
         a {
             color: blue;
             padding: 5px 10px;
-            &.active:hover {
-                text-decoration: none;
-                background-color: rgba(#ff8,0.5);
-                border-radius: 3px;
+            border-radius: 3px;
+            &.active{   
+                background-color: rgba($c_base,0.2);
+                &:hover {
+                    text-decoration: none;
+                    background-color: rgba($c_base,0.5);
+                }
             }
             &.inactive {
                 color: cyan;
@@ -80,14 +87,13 @@ form {
         }
     }
     input {
-        line-height: 1em;
         display: inline-block;
         margin: 10px 10px 0 0;
         padding: 10px 0;
-        font-family: Comic Sans, Comic Sans MS, cursive;
+        @include baseFont;
         border: none;
         background-color: #ffa;
-        background-color: rgba(#ff8,0.5);
+        background-color: rgba($c_base,0.5);
         font-size: 0.9em;
         color: #f0f;
         outline: none;
@@ -105,7 +111,7 @@ form {
         }
         &:focus {
             background-color: #ff5;
-            background-color: rgba(#ff8,0.8);
+            background-color: rgba($c_base,0.8);
             width: 600px;
         }
     }
@@ -115,7 +121,7 @@ form {
     .url {
         display: inline-block;
         margin: 10px 10px 0 0;
-        color: teal;
+        color: purple;
         background: rgba(#fff,0.7);
         padding: 3px 6px 4px;
         opacity: 0;

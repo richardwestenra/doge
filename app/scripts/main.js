@@ -123,7 +123,8 @@ $(function(){
 
 	function makeUrl(words){
 		// console.log(window.location.origin+window.location.pathname, words);
-		var url = window.location.origin + window.location.pathname + '?' + words;
+		var q = words.length>0 ? '?' : ''
+		var url = window.location.origin + window.location.pathname + q + words;
 		$('.url').addClass('active').html('url 2 share: <a href="'+url+'">'+url+'</a>');
 	}
 	$('#suchInput').on('keyup keypress blur focus change',function(){
