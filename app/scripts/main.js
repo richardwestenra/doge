@@ -24,16 +24,10 @@ $(function(){
 		return Math.random()<0.5 ? -1 : 1;
 	}
 
-	var dogeInit = false;
 	(function doge(){
-		dogeInit = true;
-		// var svgTemplate = _.template(
-		// 	$('#svgTemplate').html()
-		// );
 		var wowTemplate = _.template(
 			$('#wowTemplate').html()
 		);
-
 		var textSolo = [
 			'wow',
 			'excite'
@@ -56,12 +50,7 @@ $(function(){
 			})).concat(textSolo);
 		});
 
-		var $doge = $('.doge'),
-			dogeOn = false;
-
-		var playDoge = function(){
-			return true;
-		};
+		var $doge = $('.doge');
 		var colours = ['lime','cyan','lime','cyan','yellow','pink','blue','red','purple','green','orange','brown','teal'];
 		var suchWow = function(duration){
 			var ml = randomVal(50,0) * plusOrMinus(),
@@ -89,20 +78,10 @@ $(function(){
 				interval = randomVal(200,0);
 			setTimeout(function(){
 				suchWow(duration);
-				if (playDoge()){
-					loop();
-				} else {
-					dogeOn = false;
-				}
+				loop();
 			},interval);
 		}
 		loop();
-		// $window.scroll(function(){
-			// if (playDoge() && !dogeOn) {
-			// 	dogeOn = true;
-			// 	loop();
-			// }
-		// });
 	})();
 	function makeWords(t){
 		return _.map( t.val().split(','), function(d){

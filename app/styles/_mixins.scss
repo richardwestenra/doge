@@ -1,4 +1,7 @@
 //Mixins:
+@mixin baseFont {
+    font-family: "Comic Sans", "Comic Sans MS", cursive, Lucida Console, Monaco, monospace, sans-serif;
+}
 @mixin input-placeholder {
     &.placeholder { @content; }
     &:-moz-placeholder { @content; }

@@ -2,9 +2,6 @@
 // endbower
 @import "mixins";
 
-@mixin baseFont {
-    font-family: "Comic Sans", "Comic Sans MS", cursive, Lucida Console, Monaco, monospace, sans-serif;
-}
 $c_base: #ff8;
 
 .browsehappy {
