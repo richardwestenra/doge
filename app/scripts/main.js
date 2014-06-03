@@ -30,7 +30,8 @@ $(function(){
 		);
 		var textSolo = [
 			'wow',
-			'excite'
+			'excite',
+			'amaze'
 		];
 		var q =  _.compact(queryString());
 		var nouns = q.length > 0 ? q : ['doge'];
