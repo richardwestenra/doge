@@ -36,10 +36,11 @@ $(function(){
 		var q =  _.compact(queryString());
 		var nouns = q.length > 0 ? q : ['doge'];
 		var textCompound = [
-			'v',
+			'very',
 			'much',
 			'so',
-			'such'
+			'such',
+			'many'
 		];
 		if(q.length>0){
 			$('#suchInput').val( decodeURIComponent( nouns.join(', ') ) );
